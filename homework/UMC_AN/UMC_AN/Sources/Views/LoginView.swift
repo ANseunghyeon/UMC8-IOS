@@ -136,6 +136,7 @@ struct LoginView: View {
             }
             
         }
+        .padding(.horizontal, 19)
         .frame(height: 144, alignment: .center)
     }
 }
