@@ -26,8 +26,8 @@ struct LoginView: View {
             ssoLogin
             Spacer()
         }
-        .padding(0)
-        .frame(width: 402, height: 751)
+        .padding(.horizontal, 19)
+        .frame(height: 751)
         
     }
     
@@ -84,7 +84,7 @@ struct LoginView: View {
                 ZStack {
                     Rectangle()
                     .foregroundColor(.clear)
-                    .frame(width: 402, height: 46)
+                    .frame(height: 46)
                     .background(Color("green01"))
                     .cornerRadius(20)
                     
@@ -136,7 +136,7 @@ struct LoginView: View {
             }
             
         }
-        .frame(width: 402, height: 144, alignment: .center)
+        .frame(height: 144, alignment: .center)
     }
 }
 
