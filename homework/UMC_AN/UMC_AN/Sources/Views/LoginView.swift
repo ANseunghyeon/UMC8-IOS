@@ -100,7 +100,7 @@ struct LoginView: View {
     }
     
     private var ssoLogin : some View{
-        VStack{
+        VStack(alignment: .center, spacing: 16) {
             Button(action: {
                 print("hello")
             }) {
@@ -110,8 +110,6 @@ struct LoginView: View {
                     .multilineTextAlignment(.center)
                     .foregroundColor(Color("gray04"))
             }
-            
-            Spacer()
 
             Button(action: {
                 print("hello")
@@ -120,10 +118,8 @@ struct LoginView: View {
                     Image("kakao_login")
                 }
                 .padding(0)
-                .frame(alignment: .topLeading)
+                .frame(maxWidth: .infinity, alignment: .center)
             }
-            
-            Spacer()
             
             Button(action: {
                 print("hello")
@@ -132,12 +128,10 @@ struct LoginView: View {
                     Image("apple_login")
                 }
                 .padding(0)
-                .frame(alignment: .topLeading)
+                .frame(maxWidth: .infinity, alignment: .center)
             }
-            
         }
-        .padding(.horizontal, 19)
-        .frame(height: 144, alignment: .center)
+        .frame(maxWidth: .infinity, alignment: .center)
     }
 }
 
