@@ -78,18 +78,21 @@ struct LoginView: View {
             
             Spacer()
             
-            ZStack {
-                Rectangle()
-                .foregroundColor(.clear)
-                .frame(width: 402, height: 46)
-                .background(Color("green01"))
-                .cornerRadius(20)
-                
-                Text("로그인하기")
-                    .font(.mainTextMedium16)
-                    .foregroundColor(Color("white01"))
-                    .frame(width: 71, alignment: .topLeading)
-                
+            Button(action: {
+                print("hello")
+            }) {
+                ZStack {
+                    Rectangle()
+                    .foregroundColor(.clear)
+                    .frame(width: 402, height: 46)
+                    .background(Color("green01"))
+                    .cornerRadius(20)
+                    
+                    Text("로그인하기")
+                        .font(.mainTextMedium16)
+                        .foregroundColor(Color("white01"))
+                        .frame(width: 71, alignment: .topLeading)
+                }
             }
             .frame(height: 46)
         }
@@ -98,27 +101,39 @@ struct LoginView: View {
     
     private var ssoLogin : some View{
         VStack{
-            Text("이메일로 회원가입하기")
-                .font(.mainTextRegular12)
-                .underline(true, pattern: .solid)
-                .multilineTextAlignment(.center)
-                .foregroundColor(Color("gray04"))
+            Button(action: {
+                print("hello")
+            }) {
+                Text("이메일로 회원가입하기")
+                    .font(.mainTextRegular12)
+                    .underline(true, pattern: .solid)
+                    .multilineTextAlignment(.center)
+                    .foregroundColor(Color("gray04"))
+            }
             
             Spacer()
 
-            HStack(alignment: .top, spacing: 0) {
-                Image("kakao_login")
+            Button(action: {
+                print("hello")
+            }) {
+                HStack(alignment: .top, spacing: 0) {
+                    Image("kakao_login")
+                }
+                .padding(0)
+                .frame(alignment: .topLeading)
             }
-            .padding(0)
-            .frame(alignment: .topLeading)
             
             Spacer()
             
-            HStack(alignment: .top, spacing: 0) {
-                Image("apple_login")
+            Button(action: {
+                print("hello")
+            }) {
+                HStack(alignment: .top, spacing: 0) {
+                    Image("apple_login")
+                }
+                .padding(0)
+                .frame(alignment: .topLeading)
             }
-            .padding(0)
-            .frame(alignment: .topLeading)
             
         }
         .frame(width: 402, height: 144, alignment: .center)
