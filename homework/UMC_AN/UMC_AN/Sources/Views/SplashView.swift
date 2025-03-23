@@ -9,8 +9,12 @@ import SwiftUI
 
 struct SplashView: View {
     var body: some View {
-        ZStack {
-            Color.green
+        ZStack(alignment: .center) {
+            Color("green00").ignoresSafeArea()
+            
+            Image(.logo)
+                .resizable()
+                .frame(width: 168, height: 168)
         }
     }
 }
