@@ -6,3 +6,10 @@
 //
 
 import Foundation
+
+struct UserModel{
+    var user_id: String
+    var user_pwd: String
+    
+    
+}
