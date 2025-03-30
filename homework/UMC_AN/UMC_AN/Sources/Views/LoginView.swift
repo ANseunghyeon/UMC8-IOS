@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct LoginView: View {
-
+    @StateObject private var viewModel = LoginViewModel()
+    @FocusState private var idFocused: Bool
+    @FocusState private var passwordFocused: Bool
     
     var body: some View {
         //상단 패딩
@@ -59,27 +61,29 @@ struct LoginView: View {
     private var idFiled: some View{
         VStack(alignment: .leading){
             Group{
-                Text("아이디")
+                TextField("아이디", text: $viewModel.id)
                     .font(.mainTextRegular13)
-                    .foregroundColor(Color("black01"))
+                    .focused($idFocused)
                 
                 Divider()
+                    .background(idFocused ? Color("green01") : Color("black01"))
             }.frame(height: 20)
             
             Spacer()
             
             Group{
-                Text("비밀번호")
+                SecureField("비밀번호", text: $viewModel.password)
                     .font(.mainTextRegular13)
-                    .foregroundColor(Color("black01"))
+                    .focused($passwordFocused)
                 
                 Divider()
+                    .background(passwordFocused ? Color("green01") : Color("black01"))
             }.frame(height: 20)
             
             Spacer()
             
             Button(action: {
-                print("hello")
+                viewModel.login()
             }) {
                 ZStack {
                     Rectangle()

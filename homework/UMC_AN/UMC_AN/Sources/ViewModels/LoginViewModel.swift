@@ -6,3 +6,12 @@
 //
 
 import Foundation
+
+class LoginViewModel: ObservableObject {
+    @Published var id: String = ""
+    @Published var password: String = ""
+    
+    func login() {
+        print("로그인 시도: \(id)")
+    }
+}
