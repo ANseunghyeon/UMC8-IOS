@@ -13,7 +13,7 @@ struct AdPopUP: View {
     var body: some View {
         VStack(alignment: .center) {
             // Space Between
-            popUpImage.ignoresSafeArea()
+            popUpImage
             Spacer()
             // Alternating Views and Spacers
             updateButton
@@ -30,7 +30,7 @@ struct AdPopUP: View {
                 Image("adimage")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .frame(width: 402, height: 720)
+                    .frame(width: .infinity, height: .infinity)
                     .clipped()
             )
     }
