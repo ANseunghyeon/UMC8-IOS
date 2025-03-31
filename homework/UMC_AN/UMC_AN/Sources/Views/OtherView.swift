@@ -11,7 +11,7 @@ struct OtherView: View {
     @AppStorage("userNickname") private var userNickname: String = "(작성한 닉네임)"
     
     var body: some View {
-        VStack(alignment: .center, spacing: 41){
+        VStack(alignment: .center){
             topBackground
             VStack(alignment: .center) {
               nickName
@@ -20,13 +20,12 @@ struct OtherView: View {
               reUseButton
                 Spacer()
             }
-            .frame(height: 209, alignment: .center)
+            .frame(alignment: .center)
             
             pay
             surport
-            Spacer()
         }
-        .frame(width: 440, height: 956, alignment: .top)
+        .frame(height: 720, alignment: .top)
         .background(Color("gray07"))
     }
     private var topBackground : some View{
@@ -49,7 +48,7 @@ struct OtherView: View {
             .padding(.horizontal, 23.5)
             .padding(.vertical, 16)
             .background(.white)
-            .frame(width:440, height: 120, alignment: .bottom)
+            .frame(alignment: .bottom)
     }
     
     private var nickName : some View{
@@ -137,7 +136,7 @@ struct OtherView: View {
             Divider()
         }
         .padding(10)
-        .frame(width: 420, height: 164, alignment: .leading)
+        .frame(alignment: .leading)
     }
     
     private var surport : some View{
@@ -186,7 +185,7 @@ struct OtherView: View {
             .frame(alignment: .top)
         }
         .padding(10)
-        .frame(width: 420, height: 228, alignment: .leading)
+        .frame(alignment: .leading)
     }
     
 }

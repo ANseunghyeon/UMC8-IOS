@@ -34,31 +34,27 @@ struct OrderView: View {
 struct TabBar: View {
     var body: some View {
         TabView {
-            Tab("Home", systemImage: "house") {
+            Tab("Home", image: "icon1") {
                 HomeView()
             }
             
-            Tab("Pay", systemImage: "creditcard") {
+            Tab("Pay", image: "icon2") {
                 PayView()
             }
             
-            Tab("Order", systemImage: "list.bullet") {
+            Tab("Order", image: "icon3") {
                 OrderView()
             }
             
-            Tab("Shop", systemImage: "cart") {
+            Tab("Shop", image: "icon4") {
                 ShopView()
             }
             
-            Tab("Other", systemImage: "ellipsis") {
+            Tab("Other", image: "icon5") {
                 OtherView()
             }
         }
-        .accentColor(Color("green01"))
-        .onAppear {
-            UITabBar.appearance().unselectedItemTintColor = UIColor(named: "gray00")
-            UITabBar.appearance().backgroundColor = UIColor.white
-        }
+        .tint(Color("green02"))
     }
 }
 

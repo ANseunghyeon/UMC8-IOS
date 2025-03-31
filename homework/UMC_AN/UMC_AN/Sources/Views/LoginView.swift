@@ -61,7 +61,7 @@ struct LoginView: View {
     private var idFiled: some View{
         VStack(alignment: .leading){
             Group{
-                TextField("아이디", text: $viewModel.id)
+                TextField("아이디", text: $viewModel.user.user_id)
                     .font(.mainTextRegular13)
                     .focused($idFocused)
                 
@@ -72,7 +72,7 @@ struct LoginView: View {
             Spacer()
             
             Group{
-                SecureField("비밀번호", text: $viewModel.password)
+                SecureField("비밀번호", text: $viewModel.user.user_pwd)
                     .font(.mainTextRegular13)
                     .focused($passwordFocused)
                 

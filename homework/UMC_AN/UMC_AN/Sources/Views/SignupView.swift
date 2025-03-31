@@ -31,7 +31,7 @@ struct SignupView: View {
         VStack(alignment: .leading){
             Group{
                 VStack(spacing: 3) {
-                    TextField("닉네임", text: $viewModel.nickname)
+                    TextField("닉네임", text: $viewModel.signup.nickname)
                         .font(.mainTextRegular18)
                         .focused($nicknameFocused)
                     
@@ -44,7 +44,7 @@ struct SignupView: View {
             
             Group{
                 VStack(spacing: 3) {
-                    TextField("이메일", text: $viewModel.email)
+                    TextField("이메일", text: $viewModel.signup.email)
                         .font(.mainTextRegular18)
                         .focused($emailFocused)
                     
@@ -57,7 +57,7 @@ struct SignupView: View {
             
             Group{
                 VStack(spacing: 3) {
-                    SecureField("비밀번호", text: $viewModel.password)
+                    SecureField("비밀번호", text: $viewModel.signup.password)
                         .font(.mainTextRegular18)
                         .focused($passwordFocused)
                     

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct UserModel{
-    var user_id: String
-    var user_pwd: String
+class UserModel: ObservableObject{
+    @Published var user_id: String = ""
+    @Published var user_pwd: String = ""
 }

@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 class SignupModel: ObservableObject {
-    let nickname: String = ""
-    let email: String = ""
-    let password: String = ""
+    @Published var nickname: String = ""
+    @Published var email: String = ""
+    @Published var password: String = ""
 }
