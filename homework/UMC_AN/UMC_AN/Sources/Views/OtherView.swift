@@ -11,7 +11,7 @@ struct OtherView: View {
     @AppStorage("userNickname") private var userNickname: String = "(작성한 닉네임)"
     
     var body: some View {
-        VStack(alignment: .center){
+        VStack(alignment: .center, spacing: 41){
             topBackground
             VStack(alignment: .center) {
               nickName
@@ -25,8 +25,9 @@ struct OtherView: View {
             pay
             surport
         }
-        .frame(height: 720, alignment: .top)
+        .frame(alignment: .top)
         .background(Color("gray07"))
+        .padding(.bottom, 1)
     }
     private var topBackground : some View{
             HStack(alignment: .center, spacing: 0) {
