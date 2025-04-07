@@ -8,8 +8,8 @@
 import Foundation
 import SwiftUI
 
-class SignupModel: ObservableObject {
-    @Published var nickname: String = ""
-    @Published var email: String = ""
-    @Published var password: String = ""
+class SignupModel {
+    var nickname: String = ""
+    var email: String = ""
+    var password: String = ""
 }

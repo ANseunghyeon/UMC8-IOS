@@ -8,29 +8,42 @@
 import SwiftUI
 
 struct LoginView: View {
+    @AppStorage("isLoggedIn") private var isLoggedIn: Bool = false
     @StateObject private var viewModel = LoginViewModel()
     @FocusState private var idFocused: Bool
     @FocusState private var passwordFocused: Bool
+    @State private var router = Router()
     
     var body: some View {
-        //상단 패딩
-        VStack(alignment: .center, spacing: 104) {}
-        .padding(0)
-        .frame(width: 402, height: 104, alignment: .top)
-        .background(.white)
-        
-        //전체 프레임
-        VStack(alignment: .leading) {
-            mainHead
-            Spacer()
-            idFiled
-            Spacer()
-            ssoLogin
-            Spacer()
+        NavigationStack(path: $router.path) {
+            VStack(alignment: .center, spacing: 104) {
+                //상단 패딩
+                VStack(alignment: .center, spacing: 104) {}
+                .padding(0)
+                .frame(width: 402, height: 104, alignment: .top)
+                .background(.white)
+                
+                //전체 프레임
+                VStack(alignment: .leading) {
+                    mainHead
+                    Spacer()
+                    idFiled
+                    Spacer()
+                    ssoLogin
+                    Spacer()
+                }
+                .padding(.horizontal, 19)
+                .frame(height: 751)
+            }
+            .navigationDestination(for: Route.self) { route in
+                switch route {
+                case .signup:
+                    SignupView()
+                case .tabBar:
+                    TabBar()
+                }
+            }
         }
-        .padding(.horizontal, 19)
-        .frame(height: 751)
-        
     }
     
     private var mainHead: some View{
@@ -83,7 +96,10 @@ struct LoginView: View {
             Spacer()
             
             Button(action: {
-                viewModel.login()
+                if viewModel.login() {
+                    isLoggedIn = true
+                    router.push(.tabBar)
+                }
             }) {
                 ZStack {
                     Rectangle()
@@ -106,7 +122,7 @@ struct LoginView: View {
     private var ssoLogin : some View{
         VStack(alignment: .center, spacing: 16) {
             Button(action: {
-                print("hello")
+                router.push(.signup)
             }) {
                 Text("이메일로 회원가입하기")
                     .font(.mainTextRegular12)

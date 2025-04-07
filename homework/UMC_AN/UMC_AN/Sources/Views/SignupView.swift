@@ -12,9 +12,10 @@ struct SignupView: View {
     @FocusState private var nicknameFocused: Bool
     @FocusState private var emailFocused: Bool
     @FocusState private var passwordFocused: Bool
+    @Environment(\.dismiss) private var dismiss
     
     var body: some View {
-        VStack(){}.frame(height: 210)
+        VStack() {}.frame(height: 210)
         
         VStack(alignment: .leading){
             inputFields
@@ -71,6 +72,7 @@ struct SignupView: View {
     private var updateButton : some View {
         Button(action: {
             viewModel.saveUserData()
+            dismiss()
         }) {
             HStack(alignment: .center, spacing: 10) {
                 Text("생성하기")
@@ -78,9 +80,16 @@ struct SignupView: View {
                     .foregroundColor(.white)
             }
             .frame(maxWidth: .infinity, minHeight: 58, maxHeight: 58, alignment: .center)
-            .background(Color("green01"))
+            .background(isFormValid ? Color("green01") : Color("gray02"))
             .cornerRadius(20)
         }
+        .disabled(!isFormValid)
+    }
+    
+    private var isFormValid: Bool {
+        !viewModel.signup.nickname.isEmpty &&
+        !viewModel.signup.email.isEmpty &&
+        !viewModel.signup.password.isEmpty
     }
 }
 

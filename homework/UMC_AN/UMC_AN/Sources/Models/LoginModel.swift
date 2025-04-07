@@ -7,7 +7,8 @@
 
 import Foundation
 
-class UserModel: ObservableObject{
-    @Published var user_id: String = ""
-    @Published var user_pwd: String = ""
+class UserModel{
+    var user_id: String = ""
+    var user_pwd: String = ""
+    var nickname: String = "(작성한 닉네임)"
 }

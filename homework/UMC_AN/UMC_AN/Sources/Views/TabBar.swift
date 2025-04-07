@@ -7,12 +7,6 @@
 
 import SwiftUI
 
-struct HomeView: View {
-    var body: some View {
-        Text("홈 화면")
-    }
-}
-
 struct PayView: View {
     var body: some View {
         Text("결제 화면")

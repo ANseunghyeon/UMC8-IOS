@@ -2,9 +2,15 @@ import SwiftUI
 
 @main
 struct UMCANApp: App {
+    @AppStorage("isLoggedIn") private var isLoggedIn: Bool = false
+    
     var body: some Scene {
         WindowGroup {
-            SplashView()
+            if isLoggedIn {
+                TabBar()
+            } else {
+                LoginView()
+            }
         }
     }
 }
