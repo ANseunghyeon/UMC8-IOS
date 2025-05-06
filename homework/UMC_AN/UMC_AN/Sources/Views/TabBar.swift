@@ -13,12 +13,6 @@ struct PayView: View {
     }
 }
 
-struct ShopView: View {
-    var body: some View {
-        Text("쇼핑 화면")
-    }
-}
-
 struct OrderView: View {
     var body: some View {
         Text("오더 화면")
@@ -45,7 +39,8 @@ struct TabBar: View {
             }
             
             Tab("Other", image: "icon5") {
-                OtherView()
+                ReceiptView()
+                //OtherView()
             }
         }
         .tint(Color("green02"))

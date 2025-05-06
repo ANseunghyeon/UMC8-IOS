@@ -11,24 +11,28 @@ struct OtherView: View {
     @AppStorage("isLoggedIn") private var isLoggedIn: Bool = false
     @AppStorage("userNickname") private var userNickname: String = "(작성한 닉네임)"
     @Environment(\.dismiss) private var dismiss
+    
     var body: some View {
-        VStack(alignment: .center, spacing: 41){
-            topBackground
-            VStack(alignment: .center) {
-              nickName
-              Spacer()
-              // Alternating Views and Spacers
-              reUseButton
-                Spacer()
+        VStack{
+            VStack(alignment: .center, spacing: 41){
+                topBackground
+                VStack(alignment: .center) {
+                    nickName
+                    Spacer()
+                    // Alternating Views and Spacers
+                    reUseButton
+                    Spacer()
+                }
+                .frame(alignment: .center)
+                
+                pay
+                surport
             }
-            .frame(alignment: .center)
-            
-            pay
-            surport
+            .background(Color("gray07"))
+            .frame(alignment: .top)
+            .padding(.bottom, 50)
+            Spacer()
         }
-        .frame(alignment: .top)
-        .background(Color("gray07"))
-        .padding(.bottom, 1)
     }
     private var topBackground : some View{
             HStack(alignment: .center, spacing: 0) {

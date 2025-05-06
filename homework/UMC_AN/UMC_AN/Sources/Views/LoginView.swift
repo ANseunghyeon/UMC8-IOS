@@ -155,6 +155,15 @@ struct LoginView: View {
     }
 }
 
-#Preview {
-    LoginView()
+struct LoginView_Preview: PreviewProvider {
+
+    static var devices = ["iPhone 11", "iPhone 16 Pro Max"]
+    
+    static var previews: some View {
+        ForEach(devices, id: \.self) { device in
+            LoginView()
+                .previewDevice(PreviewDevice(rawValue: device))
+                .previewDisplayName(device)
+        }
+    }
 }
